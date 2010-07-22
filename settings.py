@@ -81,6 +81,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.admin',
     'django_openid_auth',
+    'main',
 )
 
 AUTHENTICATION_BACKENDS = (
