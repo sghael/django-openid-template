@@ -24,6 +24,19 @@
 <div id="hdWrapper">
   <div id="hd">
     Header here
+
+    <p>
+      {% if request.user.is_authenticated %}
+        You are signed in as 
+        <strong> {{ request.user.username }} </strong> 
+        | <a href="/logout">Sign out</a>
+      {% else %}
+        <a href="/openid/login">Sign in with OpenID</a>
+      {% endif %}
+    </p>
+    
+    <p><a href="/private">This requires authentication</a></p>
+    
   </div>
 </div>
 
