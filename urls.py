@@ -17,7 +17,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('openidtest.main.views',
-    url(r'^$',      'index',              name="cm_index"),
+    url(r'^$',          'index'),
+    url(r'^private/$',  'require_authentication'),
 )
 
 # For Debugging
