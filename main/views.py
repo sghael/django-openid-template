@@ -4,9 +4,10 @@ from django.shortcuts               import render_to_response
 from django.template                import RequestContext
 
 def index(request):
-    return render_to_response('main/index.html', {
-    },context_instance=RequestContext(request))
+  return render_to_response('main/index.html', {
+  },context_instance=RequestContext(request))
     
 @login_required
 def require_authentication(request):
-    return HttpResponse('This page requires authentication')
+  return render_to_response('main/require_authentication.html', {
+  },context_instance=RequestContext(request))

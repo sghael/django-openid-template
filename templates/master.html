@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/site_media/css/global.css" />
 
     {% if debug %}  {% comment %}<!-- IN DEVELOPMENT USE LOCAL jQuery -->{% endcomment %}
-        <script src="/site_media/javascript/jquery/jquery-1.4.2.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/site_media/javascript/jquery/jquery-1.4.2.min.js"></script>
     {% else %} {% comment %}<!--IN PRODUCTION USE GOOGLE JSAPI version of jQuery -->{% endcomment %}
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     {% endif %}
