@@ -1,0 +1,68 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block extrahead %}
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ MEDIA_URL }}css/openid.css" />
+{% endblock %}
+  
+{% block bodycontents %}
+
+  <h2>Login (with javascript)</h2>
+  
+  {% if form.errors %}
+  <p class="errors">{% trans "Please correct errors below:" %}<br />
+  	{% if form.openid_identifier.errors %} 
+  		<span class="error">{{ form.openid_identifier.errors|join:", " }}</span>
+  	{% endif %}
+  	{% if form.next.errors %} 
+  		<span class="error">{{ form.next.errors|join:", " }}</span>
+  	{% endif %}
+  </p>
+  {% endif %}
+  
+  <form class="openid" name="fopenid" method="post" action="{{ action }}"> 
+
+    <div>
+      <ul class="providers"> 
+        <li class="openid" title="OpenID">
+          <img src="{{ MEDIA_URL }}images/openid_providers/openidW.png" alt="icon" /><span><strong>http://{your-openid-url}</strong></span></li> 
+        <li class="direct" title="Google"> 
+      		<img src="{{ MEDIA_URL }}images/openid_providers/googleW.png" alt="icon" /><span>https://www.google.com/accounts/o8/id</span></li> 
+        <li class="direct" title="Yahoo"> 
+      		<img src="{{ MEDIA_URL }}images/openid_providers/yahooW.png" alt="icon" /><span>http://yahoo.com/</span></li> 
+        <li class="username" title="AOL screen name"> 
+      		<img src="{{ MEDIA_URL }}images/openid_providers/aolW.png" alt="icon" /><span>http://openid.aol.com/<strong>username</strong></span></li> 
+        <li class="username" title="MyOpenID user name"> 
+      		<img src="{{ MEDIA_URL }}images/openid_providers/myopenid.png" alt="icon" /><span>http://<strong>username</strong>.myopenid.com/</span></li> 
+      </ul>
+    </div> 
+
+    <fieldset style="display: none;"> 
+      <label for="openid_username">Enter your <span>Provider user name</span></label> 
+      <div>
+        <span></span>
+        <input type="text" name="openid_username" />
+        <span></span> 
+        <input type="submit" value="Login" />
+      </div> 
+    </fieldset> 
+
+    <fieldset> 
+      <div style="display: none;">
+        <input type="text" name="openid_identifier" /> 
+        <input type="submit" value="Login" />
+      </div> 
+    </fieldset> 
+  
+    {% if next %}
+   	<input type="hidden" name="next" value="{{ next }}" />
+    {% endif %}
+  
+  </form>
+{% endblock %}
+
+{% block extrafooter %}
+  <script type="text/javascript" src="{{ MEDIA_URL }}javascript/jquery.openid.js"></script>
+  <script type="text/javascript">  $(function() { $("form.openid:eq(0)").openid(); });</script>
+{% endblock %}

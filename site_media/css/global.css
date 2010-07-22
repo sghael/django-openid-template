@@ -1,0 +1,101 @@
+/*******************************************************************************
+ *
+ * @site http://
+ ******************************************************************************/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-y: scroll;
+	height: 100%;
+}
+
+body {
+  color: #333333;
+  font-family: Arial, Arial, Helvetica, sans-serif;  
+  font-size:0.9em;
+  height: 100%;
+}
+
+a {
+  color:#27AAE1;
+  text-decoration: none;
+}
+
+a:visited {
+  color:#27AAE1;
+}
+
+a:hover, a span:hover {
+}
+
+a img {
+  border: 0px;
+}
+
+input, select, textarea {
+  border: 1px solid #CCCCCC;    
+}
+
+ul {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+table th, table td {
+  margin: 0px;
+  padding: 0px;
+}
+
+.clear {
+	clear: both;
+  height: 0px; width: 1px; height: 1px;
+}
+.floatL {
+    float: left;
+}
+.floatR {
+    float: right;
+}
+
+/* ************ Header ************ */
+#hdWrapper { 
+    float: left;
+    width: 100%;
+}
+    #hdWrapper #hd {
+        width: 980px;
+        margin: 0px auto;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+    }
+
+/* ************ Header ************ */
+#bdWrapper { 
+    float: left;
+    width: 100%;
+}
+    #bdWrapper #bd {
+        width: 980px;
+        margin: 0px auto;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+    }
+
+/* ************ Footer *************** */
+#ftWrapper { 
+    float: left;
+    width: 100%;
+}
+    #ftWrapper #ft {
+        width: 980px;
+        margin: 0px auto;
+        border-left: 1px solid #DDDDDD;
+        border-right: 1px solid #DDDDDD;
+    }
